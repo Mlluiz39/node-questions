@@ -1,0 +1,25 @@
+<%- include('partials/header.ejs') -%>
+
+<div class="container mt-5 w-75">
+  <hr>
+  <h1>Perguntas</h1>
+ 
+  <a href="/questions" class="btn btn-info text-white my-3">Perguntar</a>
+  <hr>
+<% questions.forEach((question) => { %>
+
+  <div class="card shadow mb-3">
+    <div class="card-body">
+      <h3> <p><%= question.title %></p></h3>
+    </div>
+    <div class="card-footer">
+      <a href="/question/<%= question.id %>"><button class="btn btn-primary my-3">Responder</button></a>
+    </div>
+  </div>
+ 
+<% }) %>
+
+</div>
+
+
+<%- include('partials/footer.ejs') -%>
