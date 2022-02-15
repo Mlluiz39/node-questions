@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
-const connection = require('../database/db')
+const sequelize = require('../config/sequelize')
 
-const Question = connection.define('perguntas', {
+const Question = sequelize.define('perguntas', {
   title: {
     type: Sequelize.STRING,
     allowNull: false

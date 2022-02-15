@@ -1,5 +1,5 @@
 const express = require('express')
-const connection = require('./database/db')
+const connection = require('./config/sequelize')
 const question = require('./models/Question')
 const answer = require('./models/Answers')
 
@@ -13,11 +13,12 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
+
 try {
   connection.authenticate();
-  console.log('Conectado com sucesso.');
+  console.log('Connection has been established successfully.');
 } catch (error) {
-  console.error('Erro ao conectar na database:', error);
+  console.error('Error in database:', error);
 }
 
 app.get('/', (request, response) => {

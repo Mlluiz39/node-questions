@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "Julia2912@"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/mlluiz/Dev/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
+    restart: always
